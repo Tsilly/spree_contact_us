@@ -17,6 +17,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 
 require 'capybara/rails'
+require 'capybara-webkit'
 require 'database_cleaner'
 require 'ffaker'
 require 'rspec/rails'
@@ -60,3 +61,5 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+Capybara.javascript_driver = :webkit
